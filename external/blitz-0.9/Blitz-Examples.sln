@@ -1,0 +1,66 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "array", "Blitz-Examples\array\array.vcproj", "{53965055-E932-4920-87F3-23BF55A11F1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{53965055-E932-4920-87F3-23BF55A11F1D} = {53965055-E932-4920-87F3-23BF55A11F1D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cartesian", "Blitz-Examples\cartesian\cartesian.vcproj", "{53965055-E932-4920-87F3-23BF55A11F1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{53965055-E932-4920-87F3-23BF55A11F1D} = {53965055-E932-4920-87F3-23BF55A11F1D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "complex-test", "Blitz-Examples\complex-test\complex-test.vcproj", "{53965055-E932-4920-87F3-23BF55A11F1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{53965055-E932-4920-87F3-23BF55A11F1D} = {53965055-E932-4920-87F3-23BF55A11F1D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "matmult", "Blitz-Examples\matmult\matmult.vcproj", "{53965055-E932-4920-87F3-23BF55A11F1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{53965055-E932-4920-87F3-23BF55A11F1D} = {53965055-E932-4920-87F3-23BF55A11F1D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple", "Blitz-Examples\simple\simple.vcproj", "{53965055-E932-4920-87F3-23BF55A11F1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{53965055-E932-4920-87F3-23BF55A11F1D} = {53965055-E932-4920-87F3-23BF55A11F1D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "blitz", "blitz\blitz.vcproj", "{53965055-E932-4920-87F3-23BF55A11F1D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.ActiveCfg = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.Build.0 = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.ActiveCfg = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.Build.0 = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.ActiveCfg = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.Build.0 = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.ActiveCfg = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.Build.0 = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.ActiveCfg = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.Build.0 = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.ActiveCfg = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.Build.0 = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.ActiveCfg = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.Build.0 = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.ActiveCfg = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.Build.0 = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.ActiveCfg = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.Build.0 = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.ActiveCfg = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.Build.0 = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.ActiveCfg = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Debug.Build.0 = Debug|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.ActiveCfg = Release|Win32
+		{53965055-E932-4920-87F3-23BF55A11F1D}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

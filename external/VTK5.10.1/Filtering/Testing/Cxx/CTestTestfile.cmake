@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: /dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Filtering/Testing/Cxx
+# Build directory: /dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Filtering/Testing/Cxx
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(CellTreeLocator "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "CellTreeLocator" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(otherCellArray "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "otherCellArray" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(otherCellBoundaries "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "otherCellBoundaries" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(otherCellPosition "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "otherCellPosition" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(otherCellTypes "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "otherCellTypes" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(otherColorTransferFunction "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "otherColorTransferFunction" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(otherEmptyCell "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "otherEmptyCell" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(otherFieldData "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "otherFieldData" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(otherRectilinearGrid "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "otherRectilinearGrid" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(otherStructuredGrid "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "otherStructuredGrid" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(quadCellConsistency "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "quadCellConsistency" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(quadraticEvaluation "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "quadraticEvaluation" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestAMRBox "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestAMRBox" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestInterpolationFunctions "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestInterpolationFunctions" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestInterpolationDerivs "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestInterpolationDerivs" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestImageDataFindCell "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestImageDataFindCell" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestImageIterator "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestImageIterator" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestGenericCell "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestGenericCell" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestGraph "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestGraph" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestGraphWeightEuclideanDistanceFilter "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestGraphWeightEuclideanDistanceFilter" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestHigherOrderCell "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestHigherOrderCell" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestPointLocators "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestPointLocators" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestPolyDataRemoveCell "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestPolyDataRemoveCell" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestPolygon "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestPolygon" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestSelectionSubtract "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestSelectionSubtract" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestTreeBFSIterator "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestTreeBFSIterator" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestTreeDFSIterator "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestTreeDFSIterator" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestTriangle "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestTriangle" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestImageDataInterpolation "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestImageDataInterpolation" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")
+add_test(TestImageDataToStructuredGrid "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/bin/FilteringCxxTests" "TestImageDataToStructuredGrid" "-T" "/dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1/Testing/Temporary")

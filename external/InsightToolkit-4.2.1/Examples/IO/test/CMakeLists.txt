@@ -1,0 +1,39 @@
+set(TEMP ${ITK_BINARY_DIR}/Testing/Temporary)
+
+if(ITK_WRAP_PYTHON)
+  INTERSECTION(WRAP_2 2 "${ITK_WRAP_DIMS}")
+
+  if(ITK_WRAP_signed_short AND ITK_WRAP_unsigned_char AND WRAP_2)
+    add_python_test(DicomSliceReadPythonTest
+      ${CMAKE_CURRENT_SOURCE_DIR}/../DicomSliceRead.py
+      DATA{${ITK_DATA_ROOT}/Input/dicom-sc_cs-1.dcm}
+      ${TEMP}/DicomSliceReadPythonOutput.png
+      --compare ${TEMP}/DicomSliceReadPythonOutput.png
+        DATA{${ITK_SOURCE_DIR}/Examples/IO/test/Baseline/DicomSliceReadPythonOutputBaseline.png}
+      )
+  endif()
+endif(ITK_WRAP_PYTHON)
+
+if(ITK_VISIBLEHUMAN_DATA_ROOT)
+  itk_add_test(NAME VisibleHumanStreamReadWriteTest
+    COMMAND ${ITK_TEST_DRIVER}
+   $<TARGET_FILE:VisibleHumanStreamReadWrite>
+    ${ITK_VISIBLEHUMAN_DATA_ROOT}/Male/Fullcolor/fullbody/
+    ${TEMP}/VisibleHumanStreamReadWrite.mha )
+  itk_add_test(NAME VisibleHumanPasteWriteTest
+    COMMAND ${ITK_TEST_DRIVER}
+   $<TARGET_FILE:VisibleHumanPasteWrite>
+    ${TEMP}/VisibleHumanStreamReadWrite.mha
+    ${TEMP}/VisibleHumanPasteWrite.mha)
+  # this test must be run sequentially, be cause the output of the first is used by the second
+  set_tests_properties(
+    VisibleHumanStreamReadWriteTest
+    PROPERTIES
+    RUN_SERIAL 1
+    )
+  set_tests_properties(
+    VisibleHumanPasteWriteTest
+    PROPERTIES
+    DEPENDS VisibleHumanStreamReadWriteTest
+    )
+endif(ITK_VISIBLEHUMAN_DATA_ROOT)

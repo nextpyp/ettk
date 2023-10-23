@@ -1,0 +1,35 @@
+Bootstrap: docker
+From: centos:7
+IncludeCmd: yes
+
+%help
+	TODO
+
+%post
+	# install packages
+	yum clean all
+	yum -y update
+	yum install -y wget which openssh gcc-4.8.5 gcc-c++-4.8.5 cmake fftw fftw-devel libXt-devel freeglut-devel git make vim nano
+	yum clean all
+
+
+    # install MPICH
+    wget http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz
+    tar xf mpich-3.2.1.tar.gz
+    rm mpich-3.2.1.tar.gz
+    cd mpich-3.2.1
+    
+    # disable the addition of the RPATH to compiled executables
+    # this allows us to override the MPI libraries to use those
+    # found via LD_LIBRARY_PATH
+    ./configure --prefix=/usr/local/mpich2 --disable-wrapper-rpath --disable-fortran
+    make -j 4 install
+    make clean
+    
+    # add to local environment to build pi.c
+    cd ..
+    rm -rf mpich-3.2.1
+
+%environment
+    export PATH=$PATH:/usr/local/mpich2/bin/
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/mpich2/lib

@@ -1,0 +1,151 @@
+
+compiling svdlibc:
+make clean
+make
+
+--------------------------------------------------
+
+problem:
+gcc -Wall -O4 -march=i486  -c main.c
+main.c:1:0: error: CPU you selected does not support x86-64 instruction set
+
+cause:
+we're telling GCC to compile for 32-bit ISA, but the platform is a 64-bit ISA
+
+solution:
+edit Makefile to not explicitly pick the wrong architecture
+ie: change `CC = gcc -Wall -O4 -march=i486`
+to:        `CC = gcc -Wall -O4`
+
+--------------------------------------------------
+
+problem:
+gcc -Wall -O4  -o svd main.o libsvd.a -lm
+main.o: In function `main':
+main.c:(.text.startup+0x276): undefined reference to `svdLoadSparseMatrix'
+... many more missing function symbols
+
+cause:
+function prototypes in libsvd.h and function implementations in libsvd.c have been commented out for some reason
+
+solution:
+uncomment the function prototypes and implementations
+
+--------------------------------------------------
+
+problem:
+gcc -Wall -O4  -o svd main.o libsvd.a -lm
+libsvd.a(svdlib.o): In function `svdWriteSparseBinaryFile':
+svdlib.c:(.text+0x1c): undefined reference to `svd_writeBinInt'
+... many more errors of a similar type
+
+cause:
+again, a bunch of functions have been commented out in svdutil.h and svdutil.c
+
+solution:
+uncomment them
+
+--------------------------------------------------
+
+actually... it looks like ETTK doesn't depend on libsvd? oops, oh well
+
+--------------------------------------------------
+
+compiling VTK:
+
+sadly, the source files for VTK already have a ccmake build inside of them.
+So we'll have to remove that first, then do a proper out-of-source build.
+
+to clean up the in-source build, use the included cmakeclean.py python script, adapted from:
+https://raw.githubusercontent.com/tschutter/homefiles/master/bin/cmake-clean
+> python cmakeclean.py
+
+to do a proper out-of-source build:
+	mkdir build
+	cd build
+	ccmake ..
+		c to configure
+		edit vars (t to show advanced vars)
+			GITCOMMAND=/opt/apps/rhel7/anaconda2/bin/git
+			MAKECOMMAND=/hpchome/apps/rhel7/anaconda2/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+			PYTHON_EXECUTABLE=/opt/apps/rhel7/anaconda2/bin/python
+			CMAKE_CXX_COMPILER=/opt/apps/rhel7/mpich-3.2.1/bin/mpic++
+			CMAKE_C_COMPILER=/opt/apps/rhel7/mpich-3.2.1/bin/mpicc
+		c to configure again
+		g for generate
+make (-j 32)
+
+--------------------------------------------------
+
+compiling Insight Toolkit
+
+run cmakeclean.py to clean up the in-source build
+
+mkdir build
+cd build
+ccmake ..
+	c to configure
+	edit vars (t to show advanced vars)
+		GITCOMMAND=/opt/apps/rhel7/anaconda2/bin/git
+		MAKECOMMAND=/hpchome/apps/rhel7/anaconda2/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+		PERL_EXECUTABLE=/opt/apps/rhel7/anaconda2/bin/perl
+		PYTHON_EXECUTABLE=/opt/apps/rhel7/anaconda2/bin/python
+		CMAKE_CXX_COMPILER=/opt/apps/rhel7/mpich-3.2.1/bin/mpic++
+		CMAKE_C_COMPILER=/opt/apps/rhel7/mpich-3.2.1/bin/mpicc
+	c to configure again
+	g to generate
+make (-j 32)
+
+--------------------------------------------------
+
+compiling ETTK
+
+run cmakeclean.py to clean up the in-source build
+(This is a different modification of the python script so it doesn't recurse into the `external` folder,
+so we don't undo all the hard work we just did to configure,build VTK and InsightToolkit.)
+
+edit CMakeLists.txt
+
+	change absolute paths:
+		FIND_PACKAGE(VTK REQUIRED PATHS /dscrhome/ab690/code/ETTK/dcc/external/VTK5.10.1 )
+		FIND_PACKAGE(ITK REQUIRED PATHS /dscrhome/ab690/code/ETTK/dcc/external/InsightToolkit-4.2.1/bin )
+
+	to relative paths: (for InsightToolkit, make sure to use the same folder name you used when running cmake)
+		FIND_PACKAGE(VTK REQUIRED PATHS external/VTK5.10.1 )
+		FIND_PACKAGE(ITK REQUIRED PATHS external/InsightToolkit-4.2.1/build )
+
+mkdir build
+cd build
+ccmake ..
+	c to configure
+	edit vars (t to show advanced vars)
+			CMAKE_CXX_COMPILER=/opt/apps/rhel7/mpich-3.2.1/bin/mpic++
+			CMAKE_C_COMPILER=/opt/apps/rhel7/mpich-3.2.1/bin/mpicc
+	c to configure again
+	g to generate
+make (-j 32)
+
+--------------------------------------------------
+
+problem:
+arg * vtkMath::RadiansToDegrees() not defined
+
+cause:
+indeed it is not
+
+solution:
+replace with vtkMath::DegreesFromRadians(arg)
+
+--------------------------------------------------
+
+problem:
+can't find matching functions for eg find, sort
+
+cause:
+missing function prototypes
+
+solution:
+add #include <algorithm> to inc/em/nbfHierarchicalClustering.h
+
+--------------------------------------------------
+
